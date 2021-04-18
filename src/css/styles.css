@@ -20,16 +20,22 @@ body {
   font-weight: bold;
 }
 
-.list-group-item {
-  font-size: 20px;
+.list-country {
+  margin-top: 50px;
+  padding-left: 300px;
+  padding-right: 300px;
+}
+.country-list-name {
+  font-size: 40px;
   font-weight: bold;
+  align-items: left;
+  justify-content: left;
+  text-align: left;
 }
 
 .container {
   text-align: center;
+  align-items: center;
+  justify-content: center;
   margin-top: 200px;
-}
-
-.flag {
-  size: 50%;
 }
