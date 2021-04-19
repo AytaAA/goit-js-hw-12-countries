@@ -26,14 +26,14 @@ function onInputChange(data) {
     renderCountryMarkUp(data);
     deleteError();
   }
-  if (data.length > 1 && data.length < 11) {
+  if (data.length > 1 && data.length <= 10) {
     renderCountriesList(data);
     deleteError();
   }
   if (data.length > 10) {
     error({
+      delay: 2000,
       text: 'Too many matches found! Please enter a more specific query!',
-      // delay: 5000,
     });
   }
 }
@@ -41,7 +41,7 @@ function onFetchError() {
   error({
     title: 'Oh No!',
     text: 'Error!',
-    // delay: 5000,
+    delay: 2000,
   });
 }
 
