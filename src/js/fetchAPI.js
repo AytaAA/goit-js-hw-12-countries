@@ -2,17 +2,16 @@ import countryCardTmpl from '../template/countries.hbs';
 import API from './fetchCountries';
 import countryListTmpl from '../template/list.hbs';
 import debounce from 'lodash.debounce';
-import { error } from '@pnotify/core';
+import { error, alert } from '@pnotify/core';
 
 const inputField = document.querySelector('.field');
 const cardContainer = document.querySelector('.js-card-container');
 const listCountry = document.querySelector('.list-country');
 
-let form = '';
 inputField.addEventListener('input', debounce(onSearchCountry, 500));
 function onSearchCountry(e) {
   resetContent();
-  form = e.target.value;
+  const form = e.target.value;
   renderMarkUp(form);
 }
 function renderMarkUp(data) {
@@ -38,10 +37,10 @@ function onInputChange(data) {
   }
 }
 function onFetchError() {
-  error({
+  alert({
     title: 'Oh No!',
     text: 'Error!',
-    delay: 2000,
+    delay: 500,
   });
 }
 
